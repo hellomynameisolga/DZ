@@ -7,6 +7,6 @@ for ($i=1; $i <11 ; $i++) {
         elseif (($i % 2)==0 && ($j % 2)==0) {
             echo (" ( $z ) &nbsp &nbsp &nbsp");}
 
-        {echo (" $z &nbsp &nbsp &nbsp");}}
+       else {echo (" $z &nbsp &nbsp &nbsp");}}
     echo "<br/>";}
 ?>
