@@ -1,4 +1,5 @@
 <?php
+$katalog=array("bmw","toyota", "opel");
 $bmw=array("model"=>"X5",
     "speed"=>"120",
     "doors"=>"5",
@@ -16,15 +17,15 @@ $result = array();
 array_push($result, $bmw, $toyota, $opel);
 print_r($result);
 echo "<br />";
+foreach ($katalog as $key => $value) {
+	echo "$value";
+	  echo "<br />";
+    foreach ($result  as $key=>$value){
+    	foreach ($value as $key => $val) {
+    	
+        echo " - $val ";
 
-foreach ($result  as $key=>$value) {
-
-    echo $key;
-    echo "<br />";
-    foreach ($value as $info) {
-        echo " - $info ";
-
-        ;
+        }
     }
     echo "<br />";
 }
