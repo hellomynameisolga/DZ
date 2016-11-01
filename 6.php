@@ -12,28 +12,13 @@ $opel=array("model"=>"X5",
     "doors"=>"4",
     "year"=>"2005");
 echo "<br />";
-function arraySum() 
-{
-	$result = array(); // здесь будет объединение массивов
-     
-    foreach($bmw as $val) { // считываем первый массив
-        $result[] = $val;
-    }
-     
-    foreach($toyota as $val) { // считываем 2-ой  массив
-        $result[] = $val;
-    }
-     foreach($opel as $val) { // считываем 3-ий  массив
-        $result[] = $val;
-    }
-     
-    return $result;
-}
-arraySum($bmw, $toyota, $opel);
+$result = array();
+array_push($result, $bmw, $toyota, $opel);
 print_r($result);
 echo "<br />";
 
-foreach ($result as $key=>$value) {
+foreach ($result  as $key=>$value) {
+
     echo $key;
     echo "<br />";
     foreach ($value as $info) {
