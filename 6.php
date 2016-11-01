@@ -1,5 +1,5 @@
+<pre>
 <?php
-$katalog=array($bmw['bmw'],$toyota['toyota'], $opel['opel']);
 $bmw=array("model"=>"X5",
     "speed"=>"120",
     "doors"=>"5",
@@ -13,10 +13,17 @@ $opel=array("model"=>"X5",
     "doors"=>"4",
     "year"=>"2005");
 echo "<br />";
+$katalog=array('bmw'=>$bmw,'toyota'=> $toyota, 'opel'=> $opel);
 foreach ($katalog as $key => $value) {
-	echo "brand = ".$key."<br />";
-		foreach ($value as $info) {
+	echo ("$key") ;
+	echo ("</br>");
+
+		foreach ($value as $key => $info) {
+
 		echo " - $info ";
+		
+
 	}
 }
 ?>
+</pre>
