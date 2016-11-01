@@ -1,4 +1,3 @@
-<pre>
 <?php
 $bmw=array("model"=>"X5",
     "speed"=>"120",
@@ -12,18 +11,13 @@ $opel=array("model"=>"X5",
     "speed"=>"110",
     "doors"=>"4",
     "year"=>"2005");
-echo "<br />";
 $katalog=array('bmw'=>$bmw,'toyota'=> $toyota, 'opel'=> $opel);
 foreach ($katalog as $key => $value) {
-	echo ("$key") ;
-	echo ("</br>");
-
+	echo "</br>";
+	echo ("$key </br>") ;
 		foreach ($value as $key => $info) {
-
-		echo " - $info ";
-		
+		echo " - $info ";	
 
 	}
 }
 ?>
-</pre>
