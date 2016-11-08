@@ -1,24 +1,24 @@
-<?php
-$bmw=array("model"=>"X5",
-    "speed"=>"120",
-    "doors"=>"5",
-    "year"=>"2015");
-$toyota=array("model"=>"X1",
-    "speed"=>"120",
-    "doors"=>"3",
-    "year"=>"2010");
-$opel=array("model"=>"X5",
-    "speed"=>"110",
-    "doors"=>"4",
-    "year"=>"2005");
-$katalog=array('bmw'=>$bmw,'toyota'=> $toyota, 'opel'=> $opel);
-foreach ($katalog as $key => $value) {
-	echo "</br>";
-	echo ("$key </br>") ;
-		foreach ($value as $key => $info) {
-		echo " - $info ";
-		
+﻿<?php
 
+$text="Каким может быть город России в XXI веке, в основе которого лежат дизайн и современные технологии.
+К обсуждению призываю архитекторов, дизайнеров, инженеров, строителей и просто тех, кто хотел бы жить в таком городе, а не уезжать из страны в поисхак комфортного места.";
+$mst=explode(".", $text);
+$b=1;
+
+function massiv($arrayName, $bool){ 
+	$p=func_num_args();
+	$arrayargs=func_get_args();
+	if ($arrayargs[1] == true){
+		$a= implode(" ", $arrayName);
+		return echo $a;						}
+	else {
+		for ($i=0; $i <count($arrayName) ; $i++) { 
+		echo "<p>$arrayName[$i]</p>";
+		}
 	}
 }
+massiv($mst, $b);
+/*Задание #1
+1.	Функция должна принимать массив строк и выводить каждую строку в отдельном параграфе (тег <p>)
+2.	Если в функцию передан второй параметр true, то возвращать (через return) результат в виде одной объединенной строки.*/
 ?>
