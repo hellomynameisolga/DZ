@@ -1,10 +1,11 @@
-<?php
+﻿<?php
 mb_internal_encoding('utf-8');
 $a="а роза упала на лапу Азора";
-palindrom($a);
+soobshenie($a);
+
 
 function palindrom($b)
-	{
+{
 $b=mb_strtolower($b);
 echo "$b";
 $d=str_replace(' ', '', $b);
@@ -14,24 +15,29 @@ $c = iconv('windows-1251', 'utf-8', $c);
 $d = iconv('windows-1251', 'utf-8', $d);
 echo "$c";
 echo "$d";
- 	if ($c==$d) {
-	echo $result = true;
+ 	if ($c==$d) 
+ 	{ 
+ 	echo "string1";
+ 	return true;
+	}
+else 
+	{ 
+	echo "string";
+	return false;
+	}
+	
 }
-else { 
-	echo $result = false;
-		}
-		return $result;
-		echo "$result";
-	 soobshenie($result);
-}
-function soobshenie($res) {
-	if ($res==1){
+
+function soobshenie($b) 
+{  	if (palindrom($a))
+			{
 			$massage="Данная строка является палиндромом"; 
-					}
+			}
 		else {
 			$massage="Данная строка не является палиндромом";
-		}
+			}
 return "$massage";
 echo "$massage";
 }
+
 ?>

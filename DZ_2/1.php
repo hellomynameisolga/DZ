@@ -1,24 +1,45 @@
 ﻿<?php
+$b="-";
+$a=8;
+$d=1;
+$c=3;
+function event( )
+{
+    $p=func_num_args();
+    $arrayargs=func_get_args();
+    print_r($arrayargs);
+    $len=count($arrayargs)-1;
+    #echo "<br>";
+    switch ($arrayargs[0])
+    {
+        case '-':
 
-$text="Каким может быть город России в XXI веке, в основе которого лежат дизайн и современные технологии.
-К обсуждению призываю архитекторов, дизайнеров, инженеров, строителей и просто тех, кто хотел бы жить в таком городе, а не уезжать из страны в поисхак комфортного места.";
-$mst=explode(".", $text);
-$b=1;
+            for ($i=1; $i < $len ; $i++) {
+                for ($j=2; $j < $len ; $j++) {
 
-function massiv($arrayName, $bool){ 
-	$p=func_num_args();
-	$arrayargs=func_get_args();
-	if ($arrayargs[1] == true){
-		$a= implode(" ", $arrayName);
-		return echo $a;						}
-	else {
-		for ($i=0; $i <count($arrayName) ; $i++) { 
-		echo "<p>$arrayName[$i]</p>";
-		}
-	}
+                    $arrayargs[$i]=$arrayargs[$i]-$arrayargs[$j];
+
+                }
+            }
+
+            echo "$arrayargs[$i]";
+
+
+            break;
+        case '/':
+            $d=$arrayargs[1];
+            for ($i=1; $i < count($arrayargs); $i++) {
+                $d=$d / $arrayargs[i+1];
+            }
+            break;
+        case '*':
+            $d=1;
+            for ($i=1; $i < count($arrayargs); $i++) {
+                $d=$d*$arrayargs[$i];
+            }
+            break;
+    }
+    return;
 }
-massiv($mst, $b);
-/*Задание #1
-1.	Функция должна принимать массив строк и выводить каждую строку в отдельном параграфе (тег <p>)
-2.	Если в функцию передан второй параметр true, то возвращать (через return) результат в виде одной объединенной строки.*/
+echo event($b, $a, $d, $c, $e);
 ?>
