@@ -1,20 +1,10 @@
-<?php
-$t="test.txt;";
-function open($d){
-
-$file=fopen("$d");
-$buff=read($file, 100);
-print($buff);
-
-
-
+﻿<?php
+$d="test.txt";
+function open ($f)
+{
+$fp = fopen( "$f", "r" ) or die ( "Не удалось открыть файл" );
+while ( ! feof ( $fp ) )
+    echo ( fgets( $fp, 1024 ) )."<br>";
 }
-open($t);
-
-
-/*
-1.	Создайте средствами ОС файл test.txt и поместите в него текст “Hello, world” 
-2.	Напишите функцию, которая будет принимать имя файла, открывать файл и выводить содержимое на экран.
-*/
-
+open ($d);
 ?>
