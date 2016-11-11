@@ -1,7 +1,7 @@
 ﻿<?php
 mb_internal_encoding('utf-8');
 $a="а роза упала на лапу Азора";
-soobshenie($a);
+echo soobshenie($a);
 
 
 function palindrom($b)
@@ -17,12 +17,10 @@ echo "$c";
 echo "$d";
  	if ($c==$d) 
  	{ 
- 	echo "string1";
  	return true;
 	}
 else 
 	{ 
-	echo "string";
 	return false;
 	}
 	
@@ -36,8 +34,7 @@ function soobshenie($b)
 		else {
 			$massage="Данная строка не является палиндромом";
 			}
-return "$massage";
-echo "$massage";
+return $massage;
 }
 
 ?>
