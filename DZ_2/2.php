@@ -1,56 +1,55 @@
-<?php
-$masch =array(1,4,5,2,3,1,0);
-
+﻿<?php
+$masch =array(1,4,44,88,3,1);
 $b='/';
-function func($arrayName, $a)
 
+function event($arr, $a)
 {
-
     $p=func_num_args();
     if ($p == 0) {echo ("введите данные");}
 
-    foreach ($arrayName as $key => $val)
+    foreach ($arr as $value)
     {
-        if (is_string($val) || is_bool($val) || is_array($val))
-        {
-			echo ("$val не является числом");
+        if(is_string($value)||is_bool($value)||is_float($value))
+    {
+        echo "Вы передали в массив не число!";
         return;
     }
+ }
 
-    else
+        switch ($a)
         {
-            switch ($a)
-            {
-                case '/':
-                    foreach ($arrayName as $k => $value) {
-                        $value=$value/2;
-                    }
-                    break;
-                case '*':
-                    foreach ($arrayName as $k => $value) {
-                        $value=$value*2;
-                    }
-                    break;
-                case '+':
-                    foreach ($arrayName as $k=> $value) {
-                        $value=$value+2;
-                    }
-                    break;
-                case '-':
-                    foreach ($arrayName as $k => $value) {
-                        $value=$value-2;
-                    }
-                    break;
-                default:
-                    echo ("Некорректный ввод данных: введите +||-||/||*");
-                    break;
-            }
-            return $value;
+            case "/":
+                foreach ($arr as $val){
+                    $i=0;
+                    $v=$val[$i];
+                    $v=$v/$arr[$i+1];
+                    $i=$i+1;}
+            case "-":
+                foreach ($arr as $val){
+                    $i=0;
+                    $v=$val[$i];
+                $v=$v-$arr[$i+1];
+                $i=$i+1;}
+                break;
+            case "+":
+                $v=0;
+                foreach ($arr as $val){
+                $v=$v+$val;}
+                break;
+            case "*":
+                $v=1;
+                foreach ($arr as $val){
+                 $v=$v * $val;}
+                break;
+            default:
+                $v='Пожалуйста, сделайте новый выбор  математического знака';
+                break;
         }
-    }
+return $v;
 
 
 
 }
-echo func($masch,$b);
+echo event($masch, $b);
+
 ?>
